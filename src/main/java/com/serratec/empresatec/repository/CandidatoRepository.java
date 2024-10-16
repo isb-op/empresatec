@@ -12,4 +12,7 @@ public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
 	List<Candidato> findByStatusCurriculo(StatusCurriculo statusCurriculo);
 	
 	List<Candidato> findByVagaDesejada(VagaDesejada vagaDesejada);
+
+	List<Candidato> findByEscolaridade(Escolaridade escolaridade);
+
 }
