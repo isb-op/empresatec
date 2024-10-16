@@ -51,6 +51,11 @@ public class CandidatoController {
 		return servico.obterPorVagaDesejada(vagaDesejada);
 	}
 
+	@GetMapping("/escolaridade/{escolaridade}")
+	public List<CandidatoDto> selecionarPorEscolaridade(@PathVariable Escolaridade escolaridade) {
+		return servico.obterPorEscolaridade(escolaridade);
+	}
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public CandidatoDto adicionarCandidato(@RequestBody CandidatoDto dto) {
