@@ -37,7 +37,12 @@ public class CandidatoService {
 		List<Candidato> candidatos = repositorio.findByStatusCurriculo(statusCurriculo);
 		return candidatos.stream().map(p -> CandidatoDto.toDto(p)).toList();
 	}
-
+	
+	public List<CandidatoDto> obterPorEscolaridade(Escolaridade escolaridade){
+		List<Candidato> candidatos = repositorio.findByEscolaridade(escolaridade);
+		return candidatos.stream().map(p -> CandidatoDto.toDto(p)).toList();
+	}
+	
 	public CandidatoDto salvarCandidato(CandidatoDto dto) {
 		return CandidatoDto.toDto(repositorio.save(dto.toEntity()));
 	}
